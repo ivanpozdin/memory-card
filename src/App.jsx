@@ -29,9 +29,20 @@ function App() {
     setCurrentScreen(PLAY_SCREEN);
   };
 
+  const handleHomeClick = function () {
+    setCurrentScreen(START_SCREEN);
+  };
+
   return (
     <>
-      <div>
+      <header>
+        <button className="home-btn" onClick={handleHomeClick}>
+          <img src="/src/assets/dark/triquetra2.gif" alt="triquetta" />
+          <h1>DAЯK</h1>
+        </button>
+        <Score currentScore={currentScore}></Score>
+      </header>
+      <main>
         {currentScreen == START_SCREEN ? (
           <Start handleStartClick={handleStartClick} />
         ) : (
@@ -55,8 +66,7 @@ function App() {
         ) : (
           ""
         )}
-        <Score currentScore={currentScore}></Score>
-      </div>
+      </main>
     </>
   );
 }

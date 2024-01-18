@@ -9,17 +9,28 @@ body {
   background-size: cover;
   background-position: center;
   background-color: black;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
-
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .start-container {
   background-color: white;
+  align-self: center;
+  display: flex;
+  justify-content: center;
 }
 .cards-container {
   display: flex;
@@ -37,13 +48,69 @@ body {
 }
 
 .score-container {
-  position: absolute;
+  /* position: absolute;
   top: 0;
-  right: 0;
+  right: 0; */
   color: #fff;
   margin-right: 5rem;
 }
 
 .game-over-container {
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  display: flex;
+  align-self: stretch;
+  justify-content: space-between;
+}
+
+.home-btn:focus {
+  outline: none;
+}
+
+.home-btn {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  /* scaling animation: */
+  transition-property: transform;
+  transition-duration: 0.2s;
+  /* transition-timing-function: ease-out; */
+}
+.home-btn h1 {
+  font-size: 5rem;
+  margin: 0;
+}
+
+.home-btn img {
+  width: 5rem;
+  animation-name: spin;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.home-btn:hover {
+  transform: scale(1.1);
+}
+
+.home-btn:active {
+  transform: scale(1.05) translateY(0.2rem);
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
