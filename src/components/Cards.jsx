@@ -2,7 +2,7 @@
 import characters from "/src/assets/dark/characters.js";
 import shuffle from "../shuffleArray";
 import Card from "./Card";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Cards({
   handleGameOver,
@@ -14,11 +14,59 @@ export default function Cards({
   );
   const [wasCharacterClicked, setWasCharacterClicked] = useState({});
 
+  useEffect(() => {
+    document.querySelectorAll(".card-container").forEach((element) => {
+      element.classList.add("card-spin-after-shuffle");
+      element.addEventListener(
+        "animationend",
+        () => {
+          element.classList.remove("card-spin-after-shuffle");
+        },
+        { once: true }
+      );
+    });
+    document.querySelectorAll(".card-container img").forEach((element) => {
+      element.classList.add("card-img-after-shuffle");
+      element.addEventListener(
+        "animationend",
+        () => {
+          element.classList.remove("card-img-after-shuffle");
+        },
+        { once: true }
+      );
+    });
+  }, [currentCharacters]);
+
   const handleCharacterClick = function (name) {
     if (wasCharacterClicked[name]) {
       handleGameOver();
       return;
     }
+    document.activeElement.blur();
+
+    document.querySelectorAll(".card-container").forEach((element) => {
+      element.classList.add("card-spin-before-shuffle");
+      element.addEventListener(
+        "animationend",
+        () => {
+          element.classList.remove("card-spin-before-shuffle");
+        },
+        { once: true }
+      );
+    });
+
+    document.querySelectorAll(".card-container img").forEach((element) => {
+      element.classList.add("card-img-before-shuffle");
+      element.addEventListener(
+        "animationend",
+        () => {
+          element.classList.remove("card-img-before-shuffle");
+        },
+        { once: true }
+      );
+    });
+
+    setTimeout(() => setCurrentCharacters(shuffle(currentCharacters)), 700);
 
     const updatedWasCharacterClicked = { ...wasCharacterClicked };
     updatedWasCharacterClicked[name] = true;
@@ -26,22 +74,21 @@ export default function Cards({
     setCurrentScore((score) => score + 1);
 
     setWasCharacterClicked(updatedWasCharacterClicked);
-
     if (Object.keys(updatedWasCharacterClicked).length == cardsNumber) {
       handleGameOver();
     }
-
-    setCurrentCharacters(shuffle(currentCharacters));
   };
 
-  const cards = currentCharacters.map((entry) => (
+  const cards = currentCharacters.map((entry, id) => (
     <Card
-      key={entry[0]}
+      key={id}
       name={entry[0]}
       imgSrc={entry[1]}
       handleClick={handleCharacterClick}
     />
   ));
 
-  return <div className="cards-container">{cards}</div>;
+  const cardsContainer = <div className="cards-container">{cards}</div>;
+
+  return cardsContainer;
 }
