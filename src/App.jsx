@@ -4,6 +4,8 @@ import Cards from "./components/Cards";
 import Start from "./components/Start";
 import Score from "./components/Score";
 import GameOver from "./components/GameOver";
+import Help from "./components/Help";
+import Github from "./assets/github-mark-white.png";
 
 const START_SCREEN = 0;
 const PLAY_SCREEN = 1;
@@ -13,6 +15,7 @@ function App() {
   const [currentScreen, setCurrentScreen] = useState(START_SCREEN);
   const [cardsNumber, setCardsNumber] = useState(4);
   const [currentScore, setCurrentScore] = useState(0);
+  const [help, setHelp] = useState(false);
 
   const handleStartClick = function (cardsNumberNew = null) {
     if (cardsNumberNew) setCardsNumber(cardsNumberNew);
@@ -33,12 +36,14 @@ function App() {
     setCurrentScreen(START_SCREEN);
   };
 
+  const helpWindow = Help();
+
   return (
     <>
       <header>
         <button className="home-btn" onClick={handleHomeClick}>
           <img src="/src/assets/dark/triquetra2.gif" alt="triquetta" />
-          <h1>DAЯK</h1>
+          <h1>DARK</h1>
         </button>
         <Score currentScore={currentScore}></Score>
       </header>
@@ -67,6 +72,26 @@ function App() {
           ""
         )}
       </main>
+      <footer>
+        {/* {help ? helpWindow : ""} */}
+        {helpWindow}
+        <button
+          className="help-btn"
+          onClick={() => {
+            document.querySelector(".help-window").classList.toggle("visible");
+
+            setHelp((previous) => !previous);
+          }}
+        >
+          ?
+        </button>
+        <a
+          className="github-link"
+          href="https://github.com/ivanpozdin/memory-card/tree/work"
+        >
+          <img src={Github} alt="GitHub logo" />
+        </a>
+      </footer>
     </>
   );
 }
