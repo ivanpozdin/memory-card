@@ -93,6 +93,10 @@ header {
   outline: none;
 }
 
+.home-btn:focus:not(:active) {
+  outline: 1px solid black;
+}
+
 header > p {
   color: #fff;
   padding-left: 5rem;
@@ -324,4 +328,21 @@ footer .help-btn:hover {
     transform: translateY(30rem);
     display: none;
   }
+}
+
+.help-window .close-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+
+  background-color: transparent;
+  width: 4rem;
+  height: 4rem;
+
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
 }

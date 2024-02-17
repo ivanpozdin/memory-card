@@ -15,7 +15,6 @@ function App() {
   const [currentScreen, setCurrentScreen] = useState(START_SCREEN);
   const [cardsNumber, setCardsNumber] = useState(4);
   const [currentScore, setCurrentScore] = useState(0);
-  const [help, setHelp] = useState(false);
 
   const handleStartClick = function (cardsNumberNew = null) {
     if (cardsNumberNew) setCardsNumber(cardsNumberNew);
@@ -41,7 +40,13 @@ function App() {
   return (
     <>
       <header>
-        <button className="home-btn" onClick={handleHomeClick}>
+        <button
+          className="home-btn"
+          onClick={() => {
+            document.activeElement.blur();
+            handleHomeClick();
+          }}
+        >
           <img src="/src/assets/dark/triquetra2.gif" alt="triquetta" />
           <h1>DARK</h1>
         </button>
@@ -78,9 +83,8 @@ function App() {
         <button
           className="help-btn"
           onClick={() => {
+            document.activeElement.blur();
             document.querySelector(".help-window").classList.toggle("visible");
-
-            setHelp((previous) => !previous);
           }}
         >
           ?
