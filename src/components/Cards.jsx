@@ -90,5 +90,24 @@ export default function Cards({
 
   const cardsContainer = <div className="cards-container">{cards}</div>;
 
+  window.addEventListener;
+
   return cardsContainer;
 }
+/*
+  let columns = 1;
+  for (let i = cardsNumber; i > 1; i--) {
+    if (cardsNumber % i !== 0) continue;
+
+    if (i * 200 < 0.8 * window.innerWidth) {
+      columns = i;
+      break;
+    }
+  }
+
+  const cardsStyle = {
+    display: "grid",
+    gridTemplateColumns: `repeat(${columns},  200px) `,
+    gap: "2rem",
+  };
+*/

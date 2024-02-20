@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Cards from "./components/Cards";
 import Start from "./components/Start";
@@ -36,6 +36,31 @@ function App() {
   };
 
   const helpWindow = Help();
+
+  const adjustCardLayout = function () {
+    if (currentScreen !== PLAY_SCREEN) {
+      return;
+    }
+    const cardsContainer = document.querySelector(".cards-container");
+
+    let columns = 1;
+    for (let i = cardsNumber; i > 1; i--) {
+      if (cardsNumber % i !== 0) continue;
+
+      if (i * 200 < 0.8 * window.innerWidth) {
+        columns = i;
+        break;
+      }
+    }
+
+    cardsContainer.style.gridTemplateColumns = `repeat(${columns}, 200px)`;
+  };
+
+  useEffect(() => {
+    adjustCardLayout();
+  }, [currentScreen]);
+
+  window.addEventListener("resize", adjustCardLayout);
 
   return (
     <>
