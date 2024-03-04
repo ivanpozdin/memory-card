@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import "./Start.css";
 
 const EASY = 4;
 const MEDIUM = 6;

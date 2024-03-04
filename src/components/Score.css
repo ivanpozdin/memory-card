@@ -1,0 +1,19 @@
+.score-container {
+  margin-left: auto;
+  grid-column: 3/4;
+}
+
+.score-container {
+  background-color: #fff;
+  color: #000;
+
+  padding-left: 3rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem 3rem;
+}
+.score-container * {
+  margin: 0;
+}

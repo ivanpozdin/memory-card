@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import "./Cards.css";
 import characters from "/src/assets/dark/characters.js";
 import shuffle from "../shuffleArray";
 import Card from "./Card";
@@ -94,20 +95,3 @@ export default function Cards({
 
   return cardsContainer;
 }
-/*
-  let columns = 1;
-  for (let i = cardsNumber; i > 1; i--) {
-    if (cardsNumber % i !== 0) continue;
-
-    if (i * 200 < 0.8 * window.innerWidth) {
-      columns = i;
-      break;
-    }
-  }
-
-  const cardsStyle = {
-    display: "grid",
-    gridTemplateColumns: `repeat(${columns},  200px) `,
-    gap: "2rem",
-  };
-*/

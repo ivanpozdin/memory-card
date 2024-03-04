@@ -1,0 +1,107 @@
+.help-btn {
+  position: absolute;
+  display: block;
+  right: 5rem;
+  bottom: 5rem;
+  border-radius: 50%;
+  height: 5rem;
+  width: 5rem;
+  opacity: 0.7;
+}
+
+.help-btn:hover {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.help-window {
+  position: absolute;
+  right: 15rem;
+  bottom: 0;
+
+  background-color: #fff;
+  border-radius: 2rem;
+  padding: 2rem 3rem;
+}
+
+.help-window * {
+  margin: 0;
+}
+
+.github-link {
+  position: absolute;
+  left: 5rem;
+  bottom: 5rem;
+  height: 5rem;
+  width: 5rem;
+  background-color: transparent;
+  opacity: 0.7;
+}
+.github-link:hover {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.github-link img {
+  height: 5rem;
+  width: 5rem;
+}
+.help-window:not(.visible) {
+  display: none;
+  opacity: 0;
+  animation: hide-help 0.5s forwards;
+}
+
+.visible {
+  transform: translateY(30rem);
+  animation: show-help 0.5s forwards;
+}
+
+@keyframes show-help {
+  from {
+    opacity: 0;
+  }
+  29% {
+    opacity: 0;
+  }
+  30% {
+    display: inline;
+    opacity: 0.5;
+  }
+
+  to {
+    display: inline;
+    transform: translateY(0rem);
+  }
+}
+
+@keyframes hide-help {
+  from {
+    display: inline;
+  }
+  70% {
+    display: inline;
+    opacity: 0.5;
+  }
+  to {
+    transform: translateY(30rem);
+    display: none;
+  }
+}
+
+.help-window .close-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+
+  background-color: transparent;
+  width: 4rem;
+  height: 4rem;
+
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+}

@@ -1,0 +1,98 @@
+.cards-container {
+  --card-bg-img: url("../assets/dark/card-background.png");
+}
+
+.card-container {
+  background-color: #cbd5e1;
+  perspective: 24rem;
+  border: none;
+}
+
+.card-container img {
+  width: 16rem;
+}
+
+.card-spin-before-shuffle {
+  animation: card-spin-before-shuffle 0.75s forwards;
+}
+
+.card-img-before-shuffle {
+  animation: card-img-before-shuffle 0.75s cubic-bezier(0, 0.65, 0.66, 1.04)
+    forwards;
+}
+
+.card-spin-after-shuffle {
+  animation: card-spin-after-shuffle 0.75s forwards;
+}
+
+.card-img-after-shuffle {
+  animation: card-img-after-shuffle 0.75s cubic-bezier(0, 0.65, 0.66, 1.04)
+    forwards;
+}
+
+@keyframes card-spin-before-shuffle {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(90deg);
+    background: var(--card-bg-img);
+    background-size: contain;
+    color: transparent;
+  }
+  100% {
+    transform: rotateY(180deg);
+    background: var(--card-bg-img);
+    background-size: contain;
+    color: transparent;
+  }
+}
+
+@keyframes card-img-before-shuffle {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes card-spin-after-shuffle {
+  0% {
+    transform: rotateY(180deg);
+    background: var(--card-bg-img);
+    background-size: contain;
+    color: transparent;
+  }
+  50% {
+    transform: rotateY(90deg);
+    background: var(--card-bg-img);
+    background-size: contain;
+    color: transparent;
+  }
+  51% {
+    transform: rotateY(90deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+
+@keyframes card-img-after-shuffle {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  51% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

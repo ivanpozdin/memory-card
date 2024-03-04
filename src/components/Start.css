@@ -1,0 +1,10 @@
+.start-container {
+  background-color: white;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+}
+
+.start-container {
+  border-radius: 1rem;
+}

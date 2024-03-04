@@ -1,11 +1,12 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import "./App.css";
+
+import HomeButton from "./components/HomeButton";
 import Cards from "./components/Cards";
 import Start from "./components/Start";
 import Score from "./components/Score";
 import GameOver from "./components/GameOver";
-import Help from "./components/Help";
-import Github from "./assets/github-mark-white.png";
+import Footer from "./components/Footer";
 
 const START_SCREEN = 0;
 const PLAY_SCREEN = 1;
@@ -35,8 +36,6 @@ function App() {
     setCurrentScreen(START_SCREEN);
   };
 
-  const helpWindow = Help();
-
   const adjustCardLayout = function () {
     if (currentScreen !== PLAY_SCREEN) {
       return;
@@ -56,25 +55,18 @@ function App() {
     cardsContainer.style.gridTemplateColumns = `repeat(${columns}, 200px)`;
   };
 
+  const adjustCardLayoutCallback = useCallback(adjustCardLayout, []);
+
   useEffect(() => {
-    adjustCardLayout();
-  }, [currentScreen]);
+    adjustCardLayoutCallback();
+  }, [currentScreen, adjustCardLayoutCallback]);
 
   window.addEventListener("resize", adjustCardLayout);
 
   return (
     <>
       <header>
-        <button
-          className="home-btn"
-          onClick={() => {
-            document.activeElement.blur();
-            handleHomeClick();
-          }}
-        >
-          <img src="/src/assets/dark/triquetra2.gif" alt="triquetta" />
-          <h1>DARK</h1>
-        </button>
+        <HomeButton handleClick={handleHomeClick} />
         <Score currentScore={currentScore}></Score>
       </header>
       <main>
@@ -102,25 +94,7 @@ function App() {
           ""
         )}
       </main>
-      <footer>
-        {/* {help ? helpWindow : ""} */}
-        {helpWindow}
-        <button
-          className="help-btn"
-          onClick={() => {
-            document.activeElement.blur();
-            document.querySelector(".help-window").classList.toggle("visible");
-          }}
-        >
-          ?
-        </button>
-        <a
-          className="github-link"
-          href="https://github.com/ivanpozdin/memory-card/tree/work"
-        >
-          <img src={Github} alt="GitHub logo" />
-        </a>
-      </footer>
+      <Footer />
     </>
   );
 }

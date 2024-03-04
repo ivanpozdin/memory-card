@@ -1,4 +1,7 @@
 /* eslint-disable react/prop-types */
+
+import "./GameOver.css";
+
 export default function GameOver({ cardsNumber, currentScore, playAgain }) {
   return (
     <div className="game-over-container">
