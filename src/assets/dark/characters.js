@@ -1,29 +1,55 @@
+import Adam from "./adam.webp";
+import AdultJonas from "./adult_jonas.webp";
+import AleksanderTiedemann from "./alexandr.webp";
+import BartoszTiedemann from "./bartozh.webp";
+import CharlotteDoppler from "./charlotta.webp";
+import ClaudiaTiedemann from "./claudiawebp.webp";
+import WClausen from "./clausen.webp";
+import ElisabethDoppler from "./elizabeth.webp";
+import FranziskaDoppler from "./franziska.webp";
+import HannahKahnwald from "./hanna.webp";
+import HGTannhaus from "./hgtannhaus.webp";
+import JonasKahnwald from "./jonas.webp";
+import KatharinaNielsen from "./katharina.webp";
+import MagnusNielsen from "./magnus.webp";
+import MarthaNielsen from "./martha.webp";
+import MichailKahnwald from "./michail.webp";
+import MikkelNielsen from "./mikkel.webp";
+import Noah from "./noah.webp";
+import PeterDoppler from "./peter.webp";
+import ReginaTiedemann from "./regina.webp";
+import SiljaTiedemann from "./silja.webp";
+import TronteNielsen from "./tronte.webp";
+import UlrichNielsen from "./ulrich.webp";
+import Unknown from "./unknown.webp";
+import TorbenWöller from "./woller.webp";
+
 const characters = {
-  Adam: "src/assets/dark/adam.webp",
-  "Adult Jonas": "src/assets/dark/adult_jonas.webp",
-  "Aleksander Tiedemann": "src/assets/dark/alexandr.webp",
-  "Bartosz Tiedemann": "src/assets/dark/bartozh.webp",
-  "Charlotte Doppler": "src/assets/dark/charlotta.webp",
-  "Claudia Tiedemann": "src/assets/dark/claudiawebp.webp",
-  "W. Clausen": "src/assets/dark/clausen.webp",
-  "Elisabeth Doppler": "src/assets/dark/elizabeth.webp",
-  "Franziska Doppler": "src/assets/dark/franziska.webp",
-  "Hannah Kahnwald": "src/assets/dark/hanna.webp",
-  "H.G. Tannhaus": "src/assets/dark/hgtannhaus.webp",
-  "Jonas Kahnwald": "src/assets/dark/jonas.webp",
-  "Katharina Nielsen": "src/assets/dark/katharina.webp",
-  "Magnus Nielsen": "src/assets/dark/magnus.webp",
-  "Martha Nielsen": "src/assets/dark/martha.webp",
-  "Michail Kahnwald": "/src/assets/dark/michail.webp",
-  "Mikkel Nielsen": "src/assets/dark/mikkel.webp",
-  Noah: "src/assets/dark/noah.webp",
-  "Peter Doppler": "src/assets/dark/peter.webp",
-  "Regina Tiedemann": "src/assets/dark/regina.webp",
-  "Silja Tiedemann": "src/assets/dark/silja.webp",
-  "Tronte Nielsen": "src/assets/dark/tronte.webp",
-  "Ulrich Nielsen": "src/assets/dark/ulrich.webp",
-  Unknown: "src/assets/dark/unknown.webp",
-  "Torben Wöller": "src/assets/dark/woller.webp",
+  Adam,
+  "Adult Jonas": AdultJonas,
+  "Aleksander Tiedemann": AleksanderTiedemann,
+  "Bartosz Tiedemann": BartoszTiedemann,
+  "Charlotte Doppler": CharlotteDoppler,
+  "Claudia Tiedemann": ClaudiaTiedemann,
+  "W. Clausen": WClausen,
+  "Elisabeth Doppler": ElisabethDoppler,
+  "Franziska Doppler": FranziskaDoppler,
+  "Hannah Kahnwald": HannahKahnwald,
+  "H.G. Tannhaus": HGTannhaus,
+  "Jonas Kahnwald": JonasKahnwald,
+  "Katharina Nielsen": KatharinaNielsen,
+  "Magnus Nielsen": MagnusNielsen,
+  "Martha Nielsen": MarthaNielsen,
+  "Michail Kahnwald": MichailKahnwald,
+  "Mikkel Nielsen": MikkelNielsen,
+  Noah,
+  "Peter Doppler": PeterDoppler,
+  "Regina Tiedemann": ReginaTiedemann,
+  "Silja Tiedemann": SiljaTiedemann,
+  "Tronte Nielsen": TronteNielsen,
+  "Ulrich Nielsen": UlrichNielsen,
+  Unknown,
+  "Torben Wöller": TorbenWöller,
 };
 
 export default characters;
