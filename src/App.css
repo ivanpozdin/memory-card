@@ -1,0 +1,41 @@
+:root {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+body {
+  font-size: 1.6rem;
+  background-image: url("assets/dark/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: black;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  align-self: stretch;
+}
+
+header > p {
+  color: #fff;
+  padding-left: 5rem;
+}
